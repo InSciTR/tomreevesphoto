@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+body { background-color: #161616; }
+
+footer { color: #848484; }
+
+.essays a { @apply text-blue-500 hover:text-blue-700; }

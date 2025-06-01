@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { title, pubDate, hero } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <article class="max-w-prose mx-auto px-6 py-16 prose prose-invert prose-img:rounded">
+    <h1 class="mb-2">{title}</h1>
+    <p class="text-sm text-gray-400 mb-8">
+      {new Date(pubDate).toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"})}
+    </p>
+    {hero && <img src={hero} alt="" class="w-full mb-8" />}
+
+    <slot />
+  </article>
+</BaseLayout>
