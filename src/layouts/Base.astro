@@ -1,0 +1,31 @@
+import "../styles/custom.css";
+
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tom Reeves Photo | {Astro.props.title ?? "Home"}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col text-gray-100 bg-[#161616]">
+    <header class="px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold tracking-widest">TOM REEVES PHOTOGRAPHY</a>
+      <nav class="space-x-6 text-sm uppercase tracking-wide">
+        <a href="/images"   class="hover:text-blue-400">Images</a>
+        <a href="/words"    class="hover:text-blue-400">Words</a>
+        <a href="/about"    class="hover:text-blue-400">About</a>
+        <a href="/contact"  class="hover:text-blue-400">Contact</a>
+        <a href="/shop"     class="hover:text-blue-400">Shop</a>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />            {/*  page content will render here  */}
+    </main>
+
+    <footer class="text-center py-6 text-xs border-t border-gray-800">
+      © {new Date().getFullYear()} Tom Reeves — All rights reserved.
+    </footer>
+  </body>
+</html>

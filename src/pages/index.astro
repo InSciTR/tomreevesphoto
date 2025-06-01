@@ -1,16 +1,44 @@
 ---
-
+import BaseLayout from "../layouts/Base.astro";
 ---
+<BaseLayout title="Home">
+  <!-- • Hero • -->
+  <section class="flex flex-col items-center text-center py-24 space-y-6">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-wide drop-shadow-glow">
+      Street & Portrait Photography
+    </h1>
+    <p class="max-w-xl text-gray-400">
+      Relaxed portraiture, fashion energy, and everyday humanity. Come see through my lens in New York City and beyond.
+    </p>
+    <div class="flex space-x-4 pt-4">
+      <a href="/images"
+         class="px-6 py-3 bg-blue-500/60 hover:bg-blue-500/80 rounded shadow-lg tracking-wider">
+        View Images
+      </a>
+      <a href="/words"
+         class="px-6 py-3 border border-blue-500/60 hover:bg-blue-500/10 rounded tracking-wider">
+        Read Essays
+      </a>
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- • Featured gallery teaser (static for now) • -->
+  <section class="px-6 pb-24">
+    <h2 class="text-2xl font-bold mb-6">Latest Set — NYFW AW2025</h2>
+    <div class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <!-- swap these three <picture> blocks with any favourite thumbnails -->
+      <picture>
+        <img src="/media/nyfw-2025/thumb-001.webp" alt="" class="w-full h-auto" loading="lazy"/>
+      </picture>
+      <picture>
+        <img src="/media/nyfw-2025/thumb-002.webp" alt="" class="w-full h-auto" loading="lazy"/>
+      </picture>
+      <picture>
+        <img src="/media/nyfw-2025/thumb-003.webp" alt="" class="w-full h-auto" loading="lazy"/>
+      </picture>
+    </div>
+    <div class="text-right pt-4">
+      <a href="/images/nyfw-2025" class="text-sm hover:text-blue-400">See full set →</a>
+    </div>
+  </section>
+</BaseLayout>
