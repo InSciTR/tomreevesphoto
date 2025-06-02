@@ -1,2 +1,0 @@
-/*
-  Content-Security-Policy: script-src 'self' https://square.site 'unsafe-inline'; frame-src https://square.site; child-src https://square.site
