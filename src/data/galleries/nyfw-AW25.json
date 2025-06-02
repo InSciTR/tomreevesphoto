@@ -1,10 +1,14 @@
 {
   "title": "NYFW Street Style AW25",
   "slug": "NYFW-AW25",
-  "cover": "~/assets/sets/nyfw-AW25/thumbs/001.webp",
+  "cover": "/sets/NYFW-AW25/001.webp",
   "items": [
-    { "src": "~/assets/sets/nyfw-AW25/full/001.webp", "type": "image", "alt": "" },
-    { "src": "~/assets/sets/nyfw-AW25/full/002.webp", "type": "image", "alt": "" },
-    { "src": "~/assets/sets/nyfw-AW25/clips/001.mp4", "type": "video", "alt": "" }
+    { "src": "/sets/NYFW-AW25/001.webp", "type": "image", "alt": "" },
+    { "src": "/sets/NYFW-AW25/002.webp", "type": "image", "alt": "" },
+    { "src": "/sets/NYFW-AW25/003.mp4",  "type": "video", "alt": "" },
+    { "src": "/sets/NYFW-AW25/004.webp", "type": "image", "alt": "" },
+    { "src": "/sets/NYFW-AW25/005.webp", "type": "image", "alt": "" },
+    { "src": "/sets/NYFW-AW25/006.webp", "type": "image", "alt": "" },
+    { "src": "/sets/NYFW-AW25/007.webp", "type": "image", "alt": "" }
   ]
 }

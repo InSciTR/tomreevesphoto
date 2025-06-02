@@ -1,10 +1,11 @@
 {
   "title": "Headshots & Portraits",
   "slug": "headshots",
-  "cover": "~/assets/sets/headshots/thumbs/001.webp",
+  "cover": "/sets/headshots/001.webp",
   "items": [
-    { "src": "~/assets/sets/headshots/full/001.webp", "type": "image", "alt": "Studio portrait" },
-    { "src": "~/assets/sets/headshots/full/002.webp", "type": "image", "alt": "" },
-    { "src": "~/assets/sets/headshots/full/003.webp", "type": "image", "alt": "" }
+    { "src": "/sets/headshots/001.webp", "type": "image", "alt": "Studio portrait" },
+    { "src": "/sets/headshots/002.webp", "type": "image", "alt": "" },
+    { "src": "/sets/headshots/003.webp", "type": "image", "alt": "" },
+    { "src": "/sets/headshots/004.webp", "type": "image", "alt": "" }
   ]
 }

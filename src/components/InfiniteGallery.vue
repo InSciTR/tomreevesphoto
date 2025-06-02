@@ -2,13 +2,29 @@
 import { ref, onMounted, watch } from 'vue';
 
 const props = defineProps({
-  initialItems: { type: Array, required: true },   // full list
+  /* Prop can arrive late (async) */
+  initialItems: { type: Array, required: false },
 });
 
 const batchSize = 30;
-const visible   = ref(props.initialItems.slice(0, batchSize));
+const visible   = ref([]);           // start empty
+
+/* Fill `visible` when items exist */
+function hydrate() {
+  if (Array.isArray(props.initialItems) && props.initialItems.length) {
+    visible.value = props.initialItems.slice(0, batchSize);
+  } else {
+    visible.value = [];
+  }
+}
+
+/* Run once and whenever the prop changes */
+hydrate();
+watch(() => props.initialItems, hydrate);
 
 function showNext() {
+  if (!Array.isArray(props.initialItems)) return;
+
   const next = props.initialItems.slice(
     visible.value.length,
     visible.value.length + batchSize
@@ -28,23 +44,27 @@ function observe(lastEl) {
 }
 
 onMounted(() => {
-  watch(visible, () => {
-    observe(document.querySelector('#gallery li:last-child'));
-  }, { flush: 'post' });
+  watch(
+    visible,
+    () => observe(document.querySelector('#gallery li:last-child')),
+    { flush: 'post' }
+  );
 });
 </script>
 
 <template>
-  <!-- 1-col mobile, 3-col desktop, 1px gaps -->
+  <!-- 1-col mobile, 3-col desktop, 1-px gaps -->
   <ul id="gallery" class="grid gap-px grid-cols-1 md:grid-cols-3">
     <li v-for="(item, i) in visible" :key="i">
-      <component :is="item.type === 'video' ? 'video' : 'img'"
-                 :src="item.src"
-                 :alt="item.alt"
-                 class="w-full h-auto"
-                 v-bind="item.type === 'video'
-                   ? { muted:true, autoplay:true, loop:true, playsinline:true }
-                   : { loading:'lazy' }" />
+      <component
+        :is="item.type === 'video' ? 'video' : 'img'"
+        :src="item.src"
+        :alt="item.alt"
+        class="w-full h-auto"
+        v-bind="item.type === 'video'
+          ? { muted: true, autoplay: true, loop: true, playsinline: true }
+          : { loading: 'lazy' }"
+      />
     </li>
   </ul>
 </template>
