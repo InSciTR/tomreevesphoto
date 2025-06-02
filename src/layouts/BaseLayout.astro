@@ -1,25 +1,41 @@
 ---
 import "../styles/global.css";   // ← activates Tailwind
+const url = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tom Reeves Photo | {Astro.props.title ?? "Home"}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body class="min-h-screen flex flex-col text-gray-100 bg-[#161616]">
-    <header class="px-6 py-4 flex justify-between items-center">
-      <a href="/" class="text-xl font-bold tracking-widest">TOM REEVES PHOTOGRAPHY</a>
-      <nav class="space-x-6 text-sm uppercase tracking-wide">
-        <a href="/images"   class="hover:text-blue-400">Images</a>
-        <a href="/words"    class="hover:text-blue-400">Words</a>
-        <a href="/about"    class="hover:text-blue-400">About</a>
-        <a href="/contact"  class="hover:text-blue-400">Contact</a>
-        <a href="/shop"     class="hover:text-blue-400">Shop</a>
-      </nav>
+  <body class="min-h-screen flex flex-col text-gray-100 bg-[#161616] antialiased">
+    <header class="px-6 py-4 flex justify-between items-center border-b border-gray-800 sticky top-0 z-50 bg-[#161616]">
+      <a href="/" class="text-xl font-bold uppercase tracking-wider">Tom Reeves <span class="text-blue-500/50">Photography</span></a>
+      <nav class="space-x-6 text-sm uppercase tracking-wide text-gray-400">
+        <a href="/images"
+          class={url.startsWith("/images") ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          Images
+        </a>
+        <a href="/words"
+          class={url.startsWith("/words") ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          Words
+        </a>
+        <a href="/about"
+          class={url === "/about" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          About
+        </a>
+        <a href="/contact"
+          class={url === "/contact" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          Contact
+        </a>
+        <a href="/shop"
+          class={url === "/shop" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          Shop
+        </a>
+      </nav>    
     </header>
 
     <main class="flex-1">
