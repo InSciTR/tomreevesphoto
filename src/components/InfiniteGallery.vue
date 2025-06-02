@@ -2,14 +2,12 @@
 import { ref, onMounted, watch } from 'vue';
 
 const props = defineProps({
-  /* Prop can arrive late (async) */
   initialItems: { type: Array, required: false },
 });
 
 const batchSize = 30;
-const visible   = ref([]);           // start empty
+const visible   = ref([]);
 
-/* Fill `visible` when items exist */
 function hydrate() {
   if (Array.isArray(props.initialItems) && props.initialItems.length) {
     visible.value = props.initialItems.slice(0, batchSize);
@@ -18,7 +16,6 @@ function hydrate() {
   }
 }
 
-/* Run once and whenever the prop changes */
 hydrate();
 watch(() => props.initialItems, hydrate);
 
@@ -50,6 +47,7 @@ onMounted(() => {
     { flush: 'post' }
   );
 });
+
 </script>
 
 <template>

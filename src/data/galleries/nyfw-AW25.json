@@ -5,7 +5,7 @@
   "items": [
     { "src": "/sets/NYFW-AW25/001.webp", "type": "image", "alt": "" },
     { "src": "/sets/NYFW-AW25/002.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/003.mp4",  "type": "video", "alt": "" },
+    { "src": "/sets/NYFW-AW25/003.mov",  "type": "video", "alt": "" },
     { "src": "/sets/NYFW-AW25/004.webp", "type": "image", "alt": "" },
     { "src": "/sets/NYFW-AW25/005.webp", "type": "image", "alt": "" },
     { "src": "/sets/NYFW-AW25/006.webp", "type": "image", "alt": "" },
