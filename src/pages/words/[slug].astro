@@ -1,11 +1,19 @@
 ---
-import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
 
-const { slug } = Astro.params;
-const post = await getEntry('words', slug);
-if (!post) throw new Error(`Post not found: ${slug}`);
+export async function getStaticPaths() {
+  const words = await getCollection('words');
+  return words.map(word => ({
+    params: { slug: word.slug },
+    props: { word },
+  }));
+}
 
-const { Content, data } = post;
+const { word } = Astro.props;
+const { Content } = await word.render(); // This renders the MDX content
+
 ---
-
-<Content />
+<PostLayout word={word}>
+  <Content />
+</PostLayout>

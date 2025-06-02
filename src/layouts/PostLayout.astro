@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { title, pubDate, hero } = Astro.props;
+const word = Astro.props.word || Astro.props;
+const { title, pubDate, hero } = word.data ?? {};
 ---
 
 <BaseLayout title={title}>
