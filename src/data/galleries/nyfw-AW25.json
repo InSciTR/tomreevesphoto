@@ -3,12 +3,6 @@
   "slug": "NYFW-AW25",
   "cover": "/sets/NYFW-AW25/001.webp",
   "items": [
-    { "src": "/sets/NYFW-AW25/001.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/002.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/003.mov",  "type": "video", "alt": "" },
-    { "src": "/sets/NYFW-AW25/004.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/005.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/006.webp", "type": "image", "alt": "" },
-    { "src": "/sets/NYFW-AW25/007.webp", "type": "image", "alt": "" }
+    { "src": "/sets/NYFW-AW25/001.webp", "type": "image", "alt": "" }
   ]
 }

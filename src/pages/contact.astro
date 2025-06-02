@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact & Booking">
+  <section class="max-w-xl mx-auto px-6 py-16">
+    <h2 class="text-xl font-bold mt-4 mb-2">Send a Message</h2>
+    <form name="contact" method="POST" data-netlify="true" class="space-y-4 bg-[#181818] p-6 rounded">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 rounded bg-[#222]"/>
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 rounded bg-[#222]"/>
+      <textarea name="message" placeholder="Your Message" required class="w-full p-2 rounded bg-[#222]"></textarea>
+      <button type="submit" class="w-full bg-blue-600 py-2 rounded font-bold">Send</button>
+    </form>
+
+    <h2 class="text-xl font-bold mt-4 mb-2">Book a Session</h2>
+    <!-- Start Square Appointments Embed Code -->
+    <script src="https://square.site/appointments/buyer/widget/eq4ensc42635t1/1YKNDBHHXB7MR.js"></script>
+    <!-- End Square Appointments Embed Code -->  
+  </section>
+</BaseLayout>

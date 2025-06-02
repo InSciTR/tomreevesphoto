@@ -3,9 +3,6 @@
   "slug": "headshots",
   "cover": "/sets/headshots/001.webp",
   "items": [
-    { "src": "/sets/headshots/001.webp", "type": "image", "alt": "Studio portrait" },
-    { "src": "/sets/headshots/002.webp", "type": "image", "alt": "" },
-    { "src": "/sets/headshots/003.webp", "type": "image", "alt": "" },
-    { "src": "/sets/headshots/004.webp", "type": "image", "alt": "" }
+    { "src": "/sets/headshots/001.webp", "type": "image", "alt": "" }
   ]
 }
