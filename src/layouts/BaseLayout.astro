@@ -10,6 +10,15 @@ const url = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tom Reeves Photo | {Astro.props.title ?? "Home"}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FWPC6PVGP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5FWPC6PVGP');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col text-gray-100 bg-[#161616] antialiased">
     <header class="px-6 py-4 flex justify-between items-center sticky top-0 z-50 bg-[#161616] shadow-md border-b border-gray-800">
