@@ -2,18 +2,18 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("words");
+const posts = await getCollection("essays");
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<BaseLayout title="Words">
+<BaseLayout title="Essays">
   <section class="max-w-3xl mx-auto px-6 py-6">
     <h1 class="text-2xl text-center uppercase font-bold mb-4 pb-4 border-b border-gray-800">Essays</h1>
 
     <ul class="space-y-10">
       {posts.map(({ id, slug, data }) => (
         <li class="group pb-4 border-b border-gray-800">
-          <a href={`/words/${slug}/`} class="block">
+          <a href={`/essays/${slug}/`} class="block">
             {data.hero && (
               <img
                 src={data.hero}
