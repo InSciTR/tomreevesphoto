@@ -6,13 +6,17 @@ const props = defineProps({
 });
 
 const batchSize = 30;
-const visible   = ref([]);
+const windowSize = 90; // Keep 3 batches in memory
+const visible = ref([]);
+const loadedCount = ref(0);
 
 function hydrate() {
   if (Array.isArray(props.initialItems) && props.initialItems.length) {
     visible.value = props.initialItems.slice(0, batchSize);
+    loadedCount.value = batchSize;
   } else {
     visible.value = [];
+    loadedCount.value = 0;
   }
 }
 
@@ -23,10 +27,21 @@ function showNext() {
   if (!Array.isArray(props.initialItems)) return;
 
   const next = props.initialItems.slice(
-    visible.value.length,
-    visible.value.length + batchSize
+    loadedCount.value,
+    loadedCount.value + batchSize
   );
-  if (next.length) visible.value.push(...next);
+  
+  if (next.length) {
+    // Add new items
+    visible.value.push(...next);
+    loadedCount.value += next.length;
+    
+    // Remove old items if we exceed window size
+    if (visible.value.length > windowSize) {
+      const removeCount = visible.value.length - windowSize;
+      visible.value = visible.value.slice(removeCount);
+    }
+  }
 }
 
 function observe(lastEl) {
@@ -36,7 +51,10 @@ function observe(lastEl) {
       io.disconnect();
       showNext();
     }
-  }, { threshold: 0.5 });
+  }, { 
+    threshold: 0.5,
+    rootMargin: '100px' // Start loading before reaching the bottom
+  });
   io.observe(lastEl);
 }
 
