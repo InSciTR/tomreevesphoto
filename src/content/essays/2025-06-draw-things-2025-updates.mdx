@@ -1,0 +1,97 @@
+---
+title: "Draw Things App: 2025 Feature Digest & Release Guide"
+pubDate: 2025-06-05
+excerpt: "A clear, practical summary of all the major 2025 Draw Things app updates—explaining every new feature, supported model, and technical term in simple language for creative workflows."
+layout: ../../layouts/PostLayout.astro
+---
+
+# Draw Things App: 2025 Feature Digest & Release Guide
+
+A clear, practical summary of all the major 2025 Draw Things app updates—explaining every new feature, supported model, and technical term in simple language for creative workflows.
+
+---
+
+## Executive Takeaway
+
+Draw Things evolved from a free, offline image generator into a **hybrid image + video studio** supporting the latest open-source models (Hunyuan-Video, Wan 2.1, HiDream, FLUX Redux). You can now **off-load heavy jobs to a secure cloud**—without losing the local control that artists love. Recent updates bring first-class video tools, new models, RAM-friendly features, and smoother workflows for LoRA, ControlNet, and batch management.
+
+---
+
+## What Draw Things Can Do Now
+
+| Pillar                | 2024 Baseline                 | 2025 Upgrades & Benefits                                                          |
+|-----------------------|-------------------------------|-----------------------------------------------------------------------------------|
+| **Generative Core**   | SDXL-class image diffusion    | Adds *video diffusion* with Hunyuan, Wan 2.1 & SkyReels—480p/720p text-to-video, inpainting |
+| **Model Zoo**         | FLUX.1 image model            | FLUX fixes, Flex.1 Redux, HiDream, Chroma, Transparent-Image LoRA, 8-bit conversion |
+| **Performance**       | fp16-only inference           | SVDQuant 6-bit models, TeaCache (up to 4× faster DiT), CPU/GPU off-load, Universal Weights Cache |
+| **Remote Compute**    | Experimental gRPC server      | Cloud Compute toggle + shared-secret auth, local control, remote power             |
+| **Editing Tools**     | ControlNet, img2img rails     | New Control panel: merge ControlNets, tiled overlap fix, zoom-in img2img, batch video |
+| **UX & Language**     | English-only UI               | Japanese, Korean, French, German support, onboarding improvements                  |
+| **Export**            | PNG/JPG sequences             | ProRes 4444 video export, codec selector, batch video history preview & save       |
+
+---
+
+## Release-by-Release Highlights
+
+### Feb–Mar 2025
+
+- **Hunyuan video model**: Best-in-class text-to-video, LoRA support for video, seamless tiling & inpainting, bugfixes for model imports.
+- **Cloud Compute**: Offload jobs to Linux servers with all model settings available.
+- **FLUX.1 & ESRGAN improvements**: Small quality gains, upscaling is up to 2× faster.
+
+### Mar–Apr 2025
+
+- **Wan 2.1 models**: Fast, high-quality text-to-video and image-to-video at 480p/720p; 6-bit quantization means less RAM, faster loads.
+- **TeaCache**: Up to 4× faster generation for DiT models, now available for HiDream, Wan, FLUX, Hunyuan.
+
+### Apr–May 2025
+
+- **HiDream series**: State-of-the-art image generation, multi-language tokenization, CJK character fixes, transparent PNG LoRA support.
+- **Universal Weights Cache**: Slashes RAM requirements on 8–18GB Macs/iPads.
+- **New codecs**: ProRes 4444 as default for video export on macOS, codec selection in settings.
+- **Batch & video management**: Videos grouped in history, right-click/long-press for fast export.
+
+### Late May 2025
+
+- **Chroma models, BYO-LoRA in cloud**: Bring your own LoRA for cloud jobs, private storage, up to 10GB.
+- **Causal Inference for Wan 2.1**: Improved video realism for cause/effect scenes.
+- **General speed & stability**: 2–5% speedup on DiT/CUDA; more robust chunked gRPC for large jobs.
+
+---
+
+## Key Acronyms, Explained
+
+| Acronym   | Meaning                                          | Role in Draw Things                                              |
+|-----------|--------------------------------------------------|------------------------------------------------------------------|
+| **gRPC**  | Google Remote Procedure Call                     | Offloads jobs to remote server, with full local-like control     |
+| **LoRA**  | Low-Rank Adaptation (style/character fine-tunes) | Lets you change styles or subjects with small adapter files      |
+| **ESRGAN**| Enhanced Super-Resolution GAN                    | High-quality, fast image/video upscaling                        |
+| **VAE**   | Variational Auto-Encoder                         | Compresses images for faster, better generation                 |
+| **CFG**   | Classifier-Free Guidance                         | Directs models to stick closer to your prompt                   |
+| **SVDQuant**| Singular Value Decomposition Quantization      | Allows big models to run with less RAM (6-bit weights)          |
+| **TeaCache**| Timestep Embedding Aware Cache                 | Skips redundant compute for up to 4× faster generations         |
+| **T2V/I2V**| Text-to-Video / Image-to-Video                  | Animate from text, or from your own still images                |
+| **DiT**   | Diffusion Transformer backbone                   | Newer, more powerful models use this architecture               |
+| **SigLIP**| Sigmoid-loss Language-Image Pre-training         | Advanced vision-text encoder (better prompt/keyword handling)   |
+| **LLaVA** | Large Language-and-Vision Assistant              | Lets you guide with text and images                             |
+| **ProRes 4444** | Apple’s high-fidelity video codec          | Default for Mac video export, perfect for professional workflows|
+
+---
+
+## Practical Tips for Creatives
+
+- **Use Cloud Compute** on low-RAM Macs/iPads—no settings lost, remote power gained.
+- **Enable TeaCache** for fast generation (especially on big models).
+- **Try 8-bit model conversion** on heavy checkpoints to cut RAM in half.
+- **Group videos** and export them in the history panel—ProRes and PNG supported.
+- **HiDream/Wan 2.1**: best for multilingual and CJK prompts after recent patches.
+
+---
+
+## Why These Updates Matter
+
+Together, these features flatten hardware barriers, open cinematic workflows, and cut creative wait times—turning Draw Things from an “offline Stable Diffusion toy” into a **production-ready local + cloud studio for stills and motion.**
+
+---
+
+*For more technical details or the full changelog, see [Draw Things Wiki](https://wiki.drawthings.ai/wiki/Main_Page).*

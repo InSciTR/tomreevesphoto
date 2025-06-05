@@ -1,17 +1,27 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const essay = Astro.props.essay || Astro.props;
-const { title, pubDate, hero } = essay.data ?? {};
+const { frontmatter } = Astro.props;
+const { title, pubDate, excerpt } = frontmatter;
 ---
 
 <BaseLayout title={title}>
-  <article class="max-w-prose mx-auto px-6 py-6 prose prose-invert prose-img:rounded">
-    <h1 class="mb-2">{title}</h1>
-    <p class="text-sm text-gray-400 mb-8">
-      {new Date(pubDate).toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"})}
-    </p>
-    {hero && <img src={hero} alt="" class="w-full mb-8" />}
+  <article class="max-w-prose mx-auto px-6 py-6">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">{title}</h1>
+      <p class="text-sm text-gray-400">
+        {new Date(pubDate).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        })}
+      </p>
+      {excerpt && (
+        <p class="mt-4 text-gray-300 italic">{excerpt}</p>
+      )}
+    </header>
 
-    <slot />
+    <div class="prose prose-invert prose-img:rounded">
+      <slot />
+    </div>
   </article>
 </BaseLayout>
