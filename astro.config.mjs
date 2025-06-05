@@ -14,7 +14,12 @@ export default defineConfig({
   integrations: [vue(), mdx()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      fs: {
+        allow: ['.', '../node_modules']
+      }
+    }
   },
 
   adapter: netlify()

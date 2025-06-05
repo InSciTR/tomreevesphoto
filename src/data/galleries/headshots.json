@@ -1,8 +1,0 @@
-{
-  "title": "Headshots & Portraits",
-  "slug": "headshots",
-  "cover": "/sets/headshots/001.webp",
-  "items": [
-    { "src": "/sets/headshots/001.webp", "type": "image", "alt": "" }
-  ]
-}
