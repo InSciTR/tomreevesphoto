@@ -107,7 +107,7 @@ def main() -> None:
         sys.exit("❌  No supported media found.")
 
     for i, path in enumerate(tqdm(files, desc="Processing", unit="file"), start=1):
-        num = f"{i:03}"
+        num = f"TR{i:03}"
         if path.suffix.lower() in IMAGE_EXTS:
             dst = out_dir / f"{num}.webp"
             process_image(path, dst, args.max, args.quality)
