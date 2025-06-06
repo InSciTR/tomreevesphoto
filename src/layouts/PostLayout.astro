@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
-const { title, pubDate, excerpt } = frontmatter;
+const { title, pubDate, excerpt } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <article class="max-w-prose mx-auto px-6 py-6">
+    <article class="
+      max-w-prose mx-auto px-6 py-8
+      prose prose-invert prose-img:rounded
+      overflow-x-auto
+      [&>*:not(:first-child)]:mt-6
+    ">
     <header class="mb-8">
       <h1 class="text-3xl font-bold mb-2">{title}</h1>
       <p class="text-sm text-gray-400">
@@ -25,3 +29,5 @@ const { title, pubDate, excerpt } = frontmatter;
     </div>
   </article>
 </BaseLayout>
+
+

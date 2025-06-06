@@ -4,4 +4,16 @@ body { background-color: #161616; }
 
 footer { color: #848484; }
 
-/* .essays a { @apply text-blue-500 hover:text-blue-700; } */
+:where(body, #__astro) > * { margin: 0; }
+  
+.prose * { margin: revert; }
+
+.prose a { @apply text-blue-500 hover:text-blue-700; }
+
+.prose table { @apply border-separate border-spacing-y-2; }
+
+.prose h2 { @apply text-lg font-bold uppercase; }
+
+.prose h3 { @apply font-bold; }
+
+.prose th { text-align: left; }
