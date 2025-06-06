@@ -33,15 +33,15 @@ const url = Astro.url.pathname;
           Essays
         </a>
         <a href="/about"
-          class={url === "/about" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          class={url.startsWith("/about") ? "text-blue-500/50" : "hover:text-blue-500/50"}>
           About
         </a>
         <a href="/contact"
-          class={url === "/contact" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          class={url.startsWith("/contact") ? "text-blue-500/50" : "hover:text-blue-500/50"}>
           Contact
         </a>
         <a href="/shop"
-          class={url === "/shop" ? "text-blue-500/50" : "hover:text-blue-500/50"}>
+          class={url.startsWith("/shop") ? "text-blue-500/50" : "hover:text-blue-500/50"}>
           Shop
         </a>
       </nav>    
