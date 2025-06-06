@@ -10,6 +10,8 @@ const url = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tom Reeves Photo | {Astro.props.title ?? "Home"}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FWPC6PVGP"></script>
     <script>
@@ -52,6 +54,20 @@ const url = Astro.url.pathname;
     </main>
 
     <footer class="text-center py-6 text-xs border-t border-gray-800">
+      <div class="social flex justify-center gap-4 mb-4">
+        <a href="https://www.instagram.com/tomreevesphoto/" class="text-gray-400 hover:text-blue-500/50 transition-colors">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="https://x.com/tomreevesphoto" class="text-gray-400 hover:text-blue-500/50 transition-colors">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/tomreeves/" class="text-gray-400 hover:text-blue-500/50 transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://500px.com/p/tomreevesphoto" class="text-gray-400 hover:text-blue-500/50 transition-colors">
+          <i class="fab fa-500px text-xl"></i>
+        </a>
+      </div>
       © {new Date().getFullYear()} Tom Reeves — All rights reserved.
     </footer>
   </body>
