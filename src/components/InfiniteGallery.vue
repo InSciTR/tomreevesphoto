@@ -74,7 +74,7 @@ onMounted(() => {
     <li v-for="(item, i) in visible" :key="i">
       <component
         :is="item.type === 'video' ? 'video' : 'img'"
-        :src="item.src"
+        :src="`/sets/${item.src}`"
         :alt="item.alt"
         class="w-full h-auto"
         v-bind="item.type === 'video'
